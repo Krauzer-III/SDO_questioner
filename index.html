@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЗАПОЛНЯТЕЛЬ ВОПРОСОВ ДЛЯ СДО</title>
+
+    <!-- Подключение Bootstrap CSS офлайн -->
+    <link rel="stylesheet" href="bts/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+
+<body>
+    <div class="container">
+        <header class="text-center mb-5">
+            <h1 class="display-4">ЗАПОЛНЯТЕЛЬ ВОПРОСОВ ДЛЯ СДО</h1>
+            <p class="lead">Строго следуйте инструкциям!
+        </header>
+
+        <!-- Секция с аккордеоном инструкций -->
+        <section class="instructions-section">
+            <h2 class="mb-3">Инструкции</h2>
+            <div class="accordion" id="instructionsAccordion">
+                <!-- Первая инструкция -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            Шаг 1: Подготовьте текст в текстовом редакторе
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                        data-bs-parent="#instructionsAccordion">
+                        <div class="accordion-body">
+                <strong>1. Как включить отображение непечатаемых знаков в Р7 Офис?</strong>
+                Для включения непечатаемых знаков необходимо перейти на вкладку "Главная" в верхнем меню, затем найти группу "Абзац" и нажать на кнопку "Отобразить все знаки". Эта кнопка имеет значок ¶. После нажатия в документе будут отображаться все непечатаемые символы.
+
+                <strong>2. Основные непечатаемые символы:</strong>
+                            <ul>
+                                <li>¶ - разрыв абзаца</li>
+                                <li>↵ - разрыв строки</li>
+                                <li>· - пробел</li>
+                                <li>→ - табуляция</li>
+                                <li>◦ - неразрывный пробел</li>
+                            </ul>
+
+                <strong>3. Разница между нумерованным списком и текстом:</strong>
+                В нумерованном списке каждый пункт имеет автоматическую нумерацию и специальные непечатаемые символы:
+
+                <strong>Нумерованный список (НЕПРАВИЛЬНО):</strong>
+                            <div class="example-box bad-example">
+1.·Вопрос·по·газопроводу¶
+а)→Ответ·1¶
+б)→Ответ·2¶
+2.·Следующий·вопрос¶
+                            </div>
+
+                <strong>Обычный текст (ПРАВИЛЬНО):</strong>
+                            <div class="example-box good-example">
+Вопрос·по·газопроводу¶
+a)·Ответ·1¶
+б)·Ответ·2¶
+Следующий·вопрос¶
+                            </div>
+
+                <strong>4. Специальные символы Unicode для замены:</strong>
+                            <table class="table table-bordered table-sm symbol-table">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Символ</th>
+                                        <th>Название</th>
+                                        <th>Alt-код</th>
+                                        <th>Unicode</th>
+                                        <th>Пример использования</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>°</strong></td>
+                                        <td>Градус</td>
+                                        <td><kbd>Alt</kbd> + <kbd>0176</kbd></td>
+                                        <td>U+00B0</td>
+                                        <td>25°C, 180°</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>²</strong></td>
+                                        <td>Верхний индекс 2</td>
+                                        <td><kbd>Alt</kbd> + <kbd>0178</kbd></td>
+                                        <td>U+00B2</td>
+                                        <td>м², 10²</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>³</strong></td>
+                                        <td>Верхний индекс 3</td>
+                                        <td><kbd>Alt</kbd> + <kbd>0179</kbd></td>
+                                        <td>U+00B3</td>
+                                        <td>м³, 5³</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>±</strong></td>
+                                        <td>Плюс-минус</td>
+                                        <td><kbd>Alt</kbd> + <kbd>0177</kbd></td>
+                                        <td>U+00B1</td>
+                                        <td>10±2, 100±5</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Ø</strong></td>
+                                        <td>Диаметр</td>
+                                        <td><kbd>Alt</kbd> + <kbd>0216</kbd></td>
+                                        <td>U+00D8</td>
+                                        <td>Ø 500 мм</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>≤</strong></td>
+                                        <td>Меньше или равно</td>
+                                        <td><kbd>Alt</kbd> + <kbd>243</kbd></td>
+                                        <td>U+2264</td>
+                                        <td>≤ 100 м</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>≥</strong></td>
+                                        <td>Больше или равно</td>
+                                        <td><kbd>Alt</kbd> + <kbd>242</kbd></td>
+                                        <td>U+2265</td>
+                                        <td>≥ 5 бар</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>μ</strong></td>
+                                        <td>Микро</td>
+                                        <td><kbd>Alt</kbd> + <kbd>230</kbd></td>
+                                        <td>U+03BC</td>
+                                        <td>μm, μS</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>₂</strong></td>
+                                        <td>Нижний индекс 2</td>
+                                        <td><kbd>Alt</kbd> + <kbd>8322</kbd></td>
+                                        <td>U+2082</td>
+                                        <td>H₂O, CO₂</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>₃</strong></td>
+                                        <td>Нижний индекс 3</td>
+                                        <td><kbd>Alt</kbd> + <kbd>8323</kbd></td>
+                                        <td>U+2083</td>
+                                        <td>C₃H₈</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>₄</strong></td>
+                                        <td>Нижний индекс 4</td>
+                                        <td><kbd>Alt</kbd> + <kbd>8324</kbd></td>
+                                        <td>U+2084</td>
+                                        <td>CH₄, C₄H₁₀</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>₅</strong></td>
+                                        <td>Нижний индекс 5</td>
+                                        <td><kbd>Alt</kbd> + <kbd>8325</kbd></td>
+                                        <td>U+2085</td>
+                                        <td>C₅H₁₂</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>₆</strong></td>
+                                        <td>Нижний индекс 6</td>
+                                        <td><kbd>Alt</kbd> + <kbd>8326</kbd></td>
+                                        <td>U+2086</td>
+                                        <td>C₆H₆</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>₇</strong></td>
+                                        <td>Нижний индекс 7</td>
+                                        <td><kbd>Alt</kbd> + <kbd>8327</kbd></td>
+                                        <td>U+2087</td>
+                                        <td>C₇H₈</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>₈</strong></td>
+                                        <td>Нижний индекс 8</td>
+                                        <td><kbd>Alt</kbd> + <kbd>8328</kbd></td>
+                                        <td>U+2088</td>
+                                        <td>C₃H₈, C₈H₁₈</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                <strong>5. Как вставить символы Unicode в Р7 Офис:</strong>
+                            <ul>
+                                <li>Через меню "Вставка" → "Символ"</li>
+                                <li>Используя комбинации клавиш Alt+код</li>
+                                <li>Копированием из таблицы символов</li>
+                            </ul>
+
+                            <div class="alert alert-info">
+                                <strong>Примечание:</strong> Alt-коды работают только с цифровой клавиатурой (NumPad). Для ноутбуков без отдельного NumPad используйте комбинацию <kbd>Fn</kbd> + клавиши с цифрами или вставляйте символы через меню "Вставка" → "Символ".
+                            </div>
+                            <!-- Пустой блок инструкции -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Вторая инструкция -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Шаг 2: Разметьте структуру
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#instructionsAccordion">
+                        <div class="accordion-body">
+                            <div class="accordion-body">
+                                <div class="accordion-body">
+<strong>Правила форматирования:</strong>
+                                    <ul>
+                                        <li>Строка вопроса должна начинаться с ???</li>
+                                        <li>Строки правильных ответов должны начинаться с +++</li>
+                                        <li>Строки неправильных ответов должны начинаться с ===</li>
+                                        <li>Используйте только разрывы абзацев</li>
+                                        <li>Используйте символы Unicode для специальных обозначений</li>
+                                        <li><strong>Можно использовать текстовую нумерацию, но НЕ автоматическую
+                                                нумерацию Word!</strong></li>
+                                    </ul>
+
+<strong>Примеры ПРАВИЛЬНОГО форматирования (с текстовой нумерацией):</strong>
+
+                                    <div class="example-box good-example">
+<strong>С нумерацией А) Б) В):</strong>
+??? Какое давление в магистральном газопроводе?
++++ А) 5,4 МПа
+=== Б) 3,2 МПа
+=== В) 7,8 МПа
+&nbsp;
+<strong>С нумерацией а) б) в):</strong>
+??? Какой диаметр трубы используется в ГРС?
++++ а) Ø 500 мм
+=== б) Ø 300 мм
+=== в) Ø 700 мм
+&nbsp;
+<strong>С нумерацией 1) 2) 3):</strong>
+??? Температура газа на входе в компрессор
++++ 1) 20±5°C
+=== 2) 15±2°C
+=== 3) 25±3°C
+&nbsp;
+<strong>С нумерацией 1. 2. 3.:</strong>
+??? Содержание метана в природном газе
++++ 1. 95±2%
+=== 2. 85±3%
+=== 3. 75±2%
+&nbsp;
+<strong>Без нумерации:</strong>
+??? Приборы для измерения расхода газа
++++ Турбинные счетчики
+=== Ультразвуковые расходомеры
+=== Мембранные счетчики
++++ Вихревые расходомеры
+                                    </div>
+
+<strong>Примеры НЕПРАВИЛЬНОГО форматирования (с автоматической нумерацией
+                                            Word):</strong>
+
+                                    <div class="example-box bad-example">
+<strong>Автоматическая нумерация Word (НЕПРАВИЛЬНО):</strong>
+1. Вопрос по газопроводу
+→ • Ответ 1
+→ • Ответ 2
+2. Следующий вопрос
+                                    </div>
+
+                                    <div class="alert alert-warning">
+                                        <strong>Важно!</strong> Используйте только текстовую нумерацию (вручную
+                                        набранные символы),
+                                        а не автоматическую нумерацию Word. В непечатаемых символах не должно быть
+                                        стрелочек →
+                                        перед пунктами списка.
+                                    </div>
+
+<strong>Пример 1: Один правильный ответ с температурой</strong>
+                                    <div class="example-box good-example">
+??? При какой температуре происходит срабатывание предохранительного клапана?
+                                        
++++ А) при 150°C
+=== Б) при 100°C
+=== В) при 200°C
+                                    </div>
+
+<strong>Пример 2: Несколько правильных ответов с объемами</strong>
+                                    <div class="example-box good-example">
+??? Какие приборы используются для контроля давления газа?
++++ 1) Манометры на 0±2 МПа
++++ 2) Дифманометры ≤ 1 кПа
+=== 3) Термометры до 300°C
++++ 4) Давлемеры ≥ 5 бар
+=== 5) Расходомеры Ø 50 мм
+                                    </div>
+
+<strong>Пример 3: Вопросы с химическими формулами</strong>
+                                    <div class="example-box good-example">
+??? Основной компонент природного газа
++++ а) метан CH₄
+=== б) пропан C₃H₈
+=== в) бутан C₄H₁₀
+=== г) этан C₂H₆
+&nbsp;
+??? Какой объем газа проходит через компрессорную станцию в сутки?
++++ 1) 10 млн м³
+=== 2) 5 млн м³
+=== 3) 15 млн м³
+                                    </div>
+
+<strong>Важные замечания:</strong>
+                                    <ul>
+                                        <li>Каждый вопрос и варианты ответов должны заканчиваться разрывом абзаца</li>
+                                        <li>Между разными вопросами должна быть пустая строка</li>
+                                        <li>Не используйте изображения, схемы, рисунки и таблицы</li>
+                                        <li>Используйте символы Unicode для специальных обозначений</li>
+                                        <li><strong>Можно использовать текстовую нумерацию (А) Б) В), 1) 2) 3), а) б)
+                                                в))</strong></li>
+                                        <li><strong>НЕ используйте автоматическую нумерацию Word!</strong></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Третья инструкция -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Шаг 3: Проверьте результат и разместите вопросы в СДО
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                        data-bs-parent="#instructionsAccordion">
+                        <div class="accordion-body">
+                             <p><strong>1. Проверка вопросов:</strong></p>
+            <ol>
+                <li>Нажмите кнопку "Разобрать текст" чтобы увидеть все вопросы в виде панелей</li>
+                <li>Внимательно проверьте каждый вопрос и ответы</li>
+                <li>Правильные ответы отмечены ✅, неправильные - ❌</li>
+                <li>Если найдете ошибки, закройте это окно и исправьте текст в поле ввода</li>
+            </ol>
+            
+            <div class="text-center my-4">
+                <img src="screenshots/check-questions.png" class="img-fluid border rounded" alt="Проверка вопросов" style="max-height: 400px;">
+                <div class="text-muted mt-2">Рис. 1 - Проверьте вопросы перед импортом</div>
+            </div>
+
+            <p><strong>2. Подготовка к импорту:</strong></p>
+            <ol>
+                <li>Введите название категории вопросов в поле ниже</li>
+                <li>Нажмите кнопку "Скопировать текст для импорта"</li>
+                <li>Откройте Блокнот (Windows) или Pluma (Linux)</li>
+                <li>Вставьте скопированный текст в новый документ</li>
+                <li>Сохраните файл как текстовый документ с расширением .txt</li>
+            </ol>
+
+            <div class="text-center my-4">
+                <img src="screenshots/category-input.png" class="img-fluid border rounded" alt="Ввод категории" style="max-height: 200px;">
+                <div class="text-muted mt-2">Рис. 2 - Введите название категории</div>
+            </div>
+
+            <div class="text-center my-4">
+                <img src="screenshots/notepad-text.png" class="img-fluid border rounded" alt="Текст в Блокноте" style="max-height: 400px;">
+                <div class="text-muted mt-2">Рис. 3 - Вставленный текст в Блокноте</div>
+            </div>
+
+            <div class="text-center my-4">
+                <img src="screenshots/save-notepad.png" class="img-fluid border rounded" alt="Сохранение файла" style="max-height: 400px;">
+                <div class="text-muted mt-2">Рис. 4 - Сохраните файл как текстовый документ</div>
+            </div>
+
+            <p><strong>3. Импорт в СДО:</strong></p>
+            <ol>
+                <li>Зайдите в нужный курс в СДО</li>
+                <li>Нажмите значок ⚙️ (шестерёнка) вверху страницы</li>
+                <li>Выберите "Больше" из выпадающего меню</li>
+                <li>Нажмите "Банк вопросов" в разделе "Вопросы"</li>
+                <li>Выберите "Импорт"</li>
+                <li>Укажите формат файла: "GIFT format"</li>
+                <li>Загрузите сохранённый текстовый файл</li>
+            </ol>
+
+            <div class="text-center my-4">
+                <img src="screenshots/course-menu.png" class="img-fluid border rounded" alt="Меню курса" style="max-height: 400px;">
+                <div class="text-muted mt-2">Рис. 5 - Меню курса (шестерёнка → Больше)</div>
+            </div>
+
+            <div class="text-center my-4">
+                <img src="screenshots/question-bank.png" class="img-fluid border rounded" alt="Банк вопросов" style="max-height: 400px;">
+                <div class="text-muted mt-2">Рис. 6 - Раздел "Банк вопросов"</div>
+            </div>
+
+            <div class="text-center my-4">
+                <img src="screenshots/import-page.png" class="img-fluid border rounded" alt="Страница импорта" style="max-height: 400px;">
+                <div class="text-muted mt-2">Рис. 7 - Страница импорта с выбором формата GIFT</div>
+            </div>
+
+            <div class="text-center my-4">
+                <img src="screenshots/upload-file.png" class="img-fluid border rounded" alt="Загрузка файла" style="max-height: 400px;">
+                <div class="text-muted mt-2">Рис. 8 - Загрузка файла в СДО</div>
+            </div>
+
+            <div class="alert alert-warning">
+                <strong>Важно!</strong> После импорта проверьте вопросы непосредственно в СДО, 
+                так как некоторые символы могут отображаться по-разному.
+            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция с текстовым полем -->
+
+        <section class="text-input-section">
+            <h2 class="mb-3">Название категории</h2>
+            <div class="mb-3">
+                <label for="textInputCat" class="form-label">Введите название категории:</label>
+                <input type="text" class="form-control" id="textInputCat" placeholder="Введите текст здесь..."/>
+            </div>
+            <h2 class="mb-3">Текстовое поле</h2>
+            <div class="mb-3">
+                <label for="textInput" class="form-label">Введите ваш текст:</label>
+                <textarea class="form-control" id="textInput" rows="6" placeholder="Введите текст здесь..."></textarea>
+            </div>
+        </section>
+
+        <!-- Секция с кнопками -->
+        <section class="buttons-section">
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                <button id="parse-btn" type="button" class="btn btn-primary me-md-2" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">
+                    Открыть модальное окно
+                </button>
+                <button type="button" class="btn btn-success" id="copyButton">
+                    Скопировать текст
+                </button>
+            </div>
+        </section>
+
+        <!-- Модальное окно -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Модальное окно</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="qa_body">
+            Это пример модального окна, открываемого с помощью Bootstrap.
+            Вы можете добавить сюда любой контент: формы, изображения, текст и т.д.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn-block"
+                            data-bs-dismiss="modal">Закрыть</button>
+                        <button type="button" class="btn btn-primary  btn-block">Сохранить изменения</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Подключение Bootstrap JS офлайн -->
+    <script src="bts/js/bootstrap.bundle.min.js"></script>
+    <script src="parser.js"></script>
+
+    <script>
+        // Функция копирования текста в буфер обмена
+        document.getElementById('copyButton').addEventListener('click', function () {
+            const textInput = document.getElementById('textInput');
+            const textInputCat = document.getElementById('textInputCat');
+            // Выделяем текст в поле ввода
+            textInput.select();
+            textInput.setSelectionRange(0, 99999); // Для мобильных устройств
+
+            try {
+                const copytext = exportGIFT(parsetext(textInput.value), textInputCat.value);
+                navigator.clipboard.writeText(copytext)
+                    .then(() => console.log("Done!"))
+                    .catch(err => console.error(err))
+            } catch (err) {
+                alert('Ошибка при копировании текста: ' + err);
+            }
+
+            // Снимаем выделение текста
+            window.getSelection().removeAllRanges();
+        });
+
+        //Считываем текст и отправляем в функцию
+        document.getElementById('parse-btn').addEventListener('click', function () {
+            const textInput = document.getElementById('textInput');
+            renderQuestions(parsetext(textInput.value), 'qa_body');
+        });
+    </script>
+</body>
+
+</html>
