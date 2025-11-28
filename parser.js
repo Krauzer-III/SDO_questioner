@@ -113,10 +113,13 @@ function exportGIFT(qdata, category) {
     for (let i = 0; i < qdata.length; i++) {
         let num = i + 1;
         result = result + `// question: ${num}  name: ${num}.\n`;
-        result = result + `:: ${num}.:: [html] <p>${qdata[i].question}</p>{\n`;
+        let ecranQuestion = qdata[i].question.replace("=", "\=").replace("+", "\+");
+        result = result + `:: ${num}.:: [html] <p>${ecranQuestion}</p>{\n`;
         let rightsCount = qdata[i].answers.filter(a => a.isRight).length;
-        for (let j = 0; j < qdata[i].answers.length; j++)
-            result = result + `${qdata[i].answers[j].isRight ? rightSymb[rightsCount] : '~'}${qdata[i].answers[j].ansText};\n`;
+        for (let j = 0; j < qdata[i].answers.length; j++) {
+            let ecranAnsver = qdata[i].answers[j].ansText.replace("=", "\=").replace("+", "\+");
+            result = result + `${qdata[i].answers[j].isRight ? rightSymb[rightsCount] : '~'}${ecranAnsver};\n`;
+        }
         result = result + '}\n\n';
     }
     return result;
